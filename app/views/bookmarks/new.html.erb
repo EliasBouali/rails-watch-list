@@ -1,0 +1,7 @@
+<h1>Ajouter à la liste "<%= @list.name %>"</h1>
+
+<%= simple_form_for [@list, @bookmark] do |f| %>
+  <%= f.input :movie_id, as: :select, collection: @movies.collect { |movie| [movie.title, movie.id] }, prompt: 'Sélectionner un film' %>
+  <%= f.input :comment, as: :text, placeholder: "Ajouter un commentaire" %>
+  <%= f.submit %>
+<% end %>
